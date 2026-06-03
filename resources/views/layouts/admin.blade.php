@@ -50,7 +50,12 @@
                             <div class="mb-2 px-3 text-[11px] font-semibold uppercase tracking-wider text-slate-400">{{ $label }}</div>
                             <div class="space-y-1">
                                 @foreach ($items as [$text, $route])
-                                    <a href="{{ route($route) }}" class="block rounded-lg px-3 py-2 text-sm font-medium transition {{ request()->routeIs($route) || request()->routeIs(\Illuminate\Support\Str::beforeLast($route, '.') . '.*') ? 'bg-emerald-50 text-emerald-700' : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900' }}">
+                                    @php
+                                        $routeParts = explode('.', $route);
+                                        $sectionRoute = \Illuminate\Support\Str::beforeLast($route, '.') . '.*';
+                                        $isActive = request()->routeIs($route) || (count($routeParts) > 2 && request()->routeIs($sectionRoute));
+                                    @endphp
+                                    <a href="{{ route($route) }}" class="block rounded-lg px-3 py-2 text-sm font-medium transition {{ $isActive ? 'bg-emerald-50 text-emerald-700' : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900' }}">
                                         {{ $text }}
                                     </a>
                                 @endforeach

@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Storage;
 
 class BuahBeku extends Model
 {
@@ -16,7 +15,6 @@ class BuahBeku extends Model
         'stok',
         'satuan',
         'harga',
-        'gambar',
     ];
 
     protected function casts(): array
@@ -54,8 +52,4 @@ class BuahBeku extends Model
         return 'In Stock';
     }
 
-    public function getImageUrlAttribute(): ?string
-    {
-        return $this->gambar ? Storage::url($this->gambar) : null;
-    }
 }

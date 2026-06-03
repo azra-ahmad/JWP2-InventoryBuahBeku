@@ -3,7 +3,7 @@
 @section('content')
     @include('partials.page-header', [
         'title' => 'Produk Buah Beku',
-        'subtitle' => 'Kelola stok awal, harga, kategori, dan gambar produk.',
+        'subtitle' => 'Kelola stok awal, harga, dan kategori produk.',
         'actions' => '<a href="' . route('admin.products.create') . '" class="rounded-lg bg-emerald-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-emerald-700">Tambah Produk</a>',
     ])
 

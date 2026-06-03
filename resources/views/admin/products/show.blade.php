@@ -21,11 +21,7 @@
         <section class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
             <div class="text-xs font-semibold uppercase text-slate-400">Status</div>
             <div class="mt-2 text-2xl font-semibold">{{ $product->status }}</div>
-            @if ($product->image_url)
-                <img src="{{ $product->image_url }}" alt="{{ $product->nama_produk }}" class="mt-4 aspect-video w-full rounded-lg object-cover">
-            @else
-                <div class="mt-4 grid aspect-video place-items-center rounded-lg bg-slate-100 text-sm text-slate-500">Tidak ada gambar</div>
-            @endif
+            <p class="mt-4 text-sm leading-6 text-slate-500">Status dihitung dari jumlah stok saat ini.</p>
         </section>
     </div>
 @endsection

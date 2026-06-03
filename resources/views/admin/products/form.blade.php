@@ -6,7 +6,7 @@
         'subtitle' => 'Gunakan data sesuai struktur tabel buah_beku.',
     ])
 
-    <form method="POST" enctype="multipart/form-data" action="{{ $product->exists ? route('admin.products.update', $product) : route('admin.products.store') }}" class="max-w-3xl rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+    <form method="POST" action="{{ $product->exists ? route('admin.products.update', $product) : route('admin.products.store') }}" class="max-w-3xl rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
         @csrf
         @if ($product->exists)
             @method('PUT')
@@ -40,13 +40,6 @@
             <label class="block">
                 <span class="mb-1 block text-sm font-semibold text-slate-700">Harga</span>
                 <input type="number" min="0" step="0.01" name="harga" value="{{ old('harga', $product->harga) }}" class="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100">
-            </label>
-            <label class="block md:col-span-2">
-                <span class="mb-1 block text-sm font-semibold text-slate-700">Gambar</span>
-                <input type="file" name="gambar" accept="image/*" class="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm">
-                @if ($product->gambar)
-                    <span class="mt-1 block text-xs text-slate-500">Gambar saat ini: {{ $product->gambar }}</span>
-                @endif
             </label>
         </div>
         <div class="mt-5 flex gap-2">

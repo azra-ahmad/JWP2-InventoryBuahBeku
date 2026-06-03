@@ -4,7 +4,6 @@ Sistem inventory buah beku berbasis Laravel 12, Blade, Tailwind CSS, dan MySQL.
 
 Fitur utama:
 
-- Laporan inventory publik tanpa login
 - Login pengguna/admin
 - Dashboard inventory
 - CRUD kategori

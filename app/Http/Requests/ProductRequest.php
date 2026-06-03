@@ -28,7 +28,6 @@ class ProductRequest extends FormRequest
             'stok' => ['required', 'integer', 'min:0'],
             'satuan' => ['required', 'string', 'max:20'],
             'harga' => ['required', 'numeric', 'min:0'],
-            'gambar' => ['nullable', 'image', 'max:2048'],
         ];
     }
 }

@@ -7,7 +7,6 @@ use App\Models\BuahBeku;
 use App\Models\KategoriBuahBeku;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
 
 class ProductController extends Controller
@@ -41,13 +40,7 @@ class ProductController extends Controller
 
     public function store(ProductRequest $request): RedirectResponse
     {
-        $data = $request->validated();
-
-        if ($request->hasFile('gambar')) {
-            $data['gambar'] = $request->file('gambar')->store('products', 'public');
-        }
-
-        BuahBeku::create($data);
+        BuahBeku::create($request->validated());
 
         return redirect()->route('admin.products.index')->with('success', 'Produk berhasil ditambahkan.');
     }
@@ -69,18 +62,7 @@ class ProductController extends Controller
 
     public function update(ProductRequest $request, BuahBeku $product): RedirectResponse
     {
-        $data = $request->validated();
-
-        if ($request->hasFile('gambar')) {
-            if ($product->gambar) {
-                Storage::disk('public')->delete($product->gambar);
-            }
-            $data['gambar'] = $request->file('gambar')->store('products', 'public');
-        } else {
-            unset($data['gambar']);
-        }
-
-        $product->update($data);
+        $product->update($request->validated());
 
         return redirect()->route('admin.products.index')->with('success', 'Produk berhasil diperbarui.');
     }
@@ -89,10 +71,6 @@ class ProductController extends Controller
     {
         if ($product->stockIns()->exists() || $product->stockOuts()->exists()) {
             return back()->with('error', 'Produk tidak bisa dihapus karena memiliki riwayat transaksi.');
-        }
-
-        if ($product->gambar) {
-            Storage::disk('public')->delete($product->gambar);
         }
 
         $product->delete();
