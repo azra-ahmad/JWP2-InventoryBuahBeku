@@ -25,8 +25,8 @@ Fitur utama:
 Clone repository:
 
 ```bash
-git clone "link-repository-github"
-cd JWP2-BuahBeku
+git clone https://github.com/azra-ahmad/JWP2-InventoryBuahBeku.git
+cd JWP2-InventoryBuahBeku
 ```
 
 Install dependency Laravel:
