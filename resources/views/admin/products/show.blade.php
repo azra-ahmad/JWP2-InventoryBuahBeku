@@ -13,7 +13,7 @@
                 <div><dt class="text-xs font-semibold uppercase text-slate-400">Kode</dt><dd class="mt-1 font-semibold">{{ $product->kode_produk }}</dd></div>
                 <div><dt class="text-xs font-semibold uppercase text-slate-400">Kategori</dt><dd class="mt-1 font-semibold">{{ $product->category?->nama_kategori }}</dd></div>
                 <div><dt class="text-xs font-semibold uppercase text-slate-400">Stok</dt><dd class="mt-1 font-semibold">{{ number_format($product->stok, 0, ',', '.') }} {{ $product->satuan }}</dd></div>
-                <div><dt class="text-xs font-semibold uppercase text-slate-400">Harga</dt><dd class="mt-1 font-semibold">Rp {{ number_format((float) $product->harga, 0, ',', '.') }}</dd></div>
+                <div><dt class="text-xs font-semibold uppercase text-slate-400">Harga (/kg)</dt><dd class="mt-1 font-semibold">Rp {{ number_format((float) $product->harga, 0, ',', '.') }}</dd></div>
                 <div><dt class="text-xs font-semibold uppercase text-slate-400">Stok Masuk</dt><dd class="mt-1 font-semibold">{{ number_format($product->stockIns->sum('jumlah'), 0, ',', '.') }} {{ $product->satuan }}</dd></div>
                 <div><dt class="text-xs font-semibold uppercase text-slate-400">Stok Keluar</dt><dd class="mt-1 font-semibold">{{ number_format($product->stockOuts->sum('jumlah'), 0, ',', '.') }} {{ $product->satuan }}</dd></div>
             </dl>

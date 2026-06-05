@@ -26,7 +26,7 @@
                         <th class="px-4 py-3">Produk</th>
                         <th class="px-4 py-3">Kategori</th>
                         <th class="px-4 py-3 text-right">Stok</th>
-                        <th class="px-4 py-3 text-right">Harga</th>
+                        <th class="px-4 py-3 text-right">Harga (/kg)</th>
                         <th class="px-4 py-3">Status</th>
                         <th class="px-4 py-3 text-right">Aksi</th>
                     </tr>

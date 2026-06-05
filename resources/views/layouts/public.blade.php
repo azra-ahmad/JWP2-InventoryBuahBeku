@@ -17,11 +17,13 @@
                     <span class="block text-xs text-slate-500">Inventaris Buah Beku</span>
                 </span>
             </a>
-            @auth('admin')
-                <a href="{{ route('admin.dashboard') }}" class="rounded-lg bg-emerald-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-700">Dashboard</a>
-            @else
-                <a href="{{ route('login') }}" class="rounded-lg bg-emerald-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-700">Login</a>
-            @endauth
+            @unless(request()->routeIs('login'))
+                @auth('admin')
+                    <a href="{{ route('admin.dashboard') }}" class="rounded-lg bg-emerald-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-700">Dashboard</a>
+                @else
+                    <a href="{{ route('login') }}" class="rounded-lg bg-emerald-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-700">Login</a>
+                @endauth
+            @endunless
         </div>
     </header>
 

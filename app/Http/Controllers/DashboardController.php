@@ -16,8 +16,14 @@ class DashboardController extends Controller
             'totalStockIn' => BuahBekuMasuk::sum('jumlah'),
             'totalStockOut' => BuahBekuKeluar::sum('jumlah'),
             'currentInventory' => BuahBeku::sum('stok'),
-            'lowestProducts' => BuahBeku::with('category')->orderBy('stok')->limit(5)->get(),
-            'highestProducts' => BuahBeku::with('category')->orderByDesc('stok')->limit(5)->get(),
+            'lowestProducts' => BuahBeku::with('category')
+                ->orderBy('stok')
+                ->limit(5)
+                ->get(),
+            'highestProducts' => BuahBeku::with('category')
+                ->orderByDesc('stok')
+                ->limit(5)
+                ->get(),
         ]);
     }
 }

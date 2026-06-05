@@ -38,7 +38,7 @@
                 <input type="number" min="0" name="stok" value="{{ old('stok', $product->stok) }}" class="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100">
             </label>
             <label class="block">
-                <span class="mb-1 block text-sm font-semibold text-slate-700">Harga</span>
+                <span class="mb-1 block text-sm font-semibold text-slate-700">Harga (/kg)</span>
                 <input type="number" min="0" step="0.01" name="harga" value="{{ old('harga', $product->harga) }}" class="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100">
             </label>
         </div>
