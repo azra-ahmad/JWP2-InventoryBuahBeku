@@ -4,13 +4,14 @@ Sistem inventory buah beku berbasis Laravel 12, Blade, Tailwind CSS, dan MySQL.
 
 Fitur utama:
 
-- Login pengguna/admin
-- Dashboard inventory
-- CRUD kategori
-- CRUD produk
-- CRUD stok masuk
-- CRUD stok keluar
-- CRUD pengguna
+- Login Admin
+- Dashboard Inventaris
+- CRUD Kategori Buah Beku
+- CRUD Produk Buah Beku
+- CRUD Stok Masuk
+- CRUD Stok Keluar
+- CRUD Pengguna
+- Laporan Inventaris
 
 ## Requirements
 
