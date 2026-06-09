@@ -10,7 +10,7 @@
 <body class="min-h-screen bg-slate-50 text-slate-900 antialiased">
     <header class="sticky top-0 z-30 border-b border-slate-200 bg-white/90 backdrop-blur">
         <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
-            <a href="{{ route('reports.public') }}" class="flex items-center gap-3">
+            <a href="{{ route('login') }}" class="flex items-center gap-3">
                 <span class="grid h-10 w-10 place-items-center rounded-xl bg-emerald-600 text-lg font-bold text-white">MJ</span>
                 <span>
                     <span class="block text-sm font-semibold">MeyJuice</span>

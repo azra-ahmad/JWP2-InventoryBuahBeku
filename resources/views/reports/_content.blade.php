@@ -1,8 +1,8 @@
 @php
     $statusClass = [
-        'In Stock' => 'border-emerald-200 bg-emerald-50 text-emerald-700',
-        'Low Stock' => 'border-amber-200 bg-amber-50 text-amber-700',
-        'Out of Stock' => 'border-red-200 bg-red-50 text-red-700',
+        'Tersedia' => 'border-emerald-200 bg-emerald-50 text-emerald-700',
+        'Stok Rendah' => 'border-amber-200 bg-amber-50 text-amber-700',
+        'Habis' => 'border-red-200 bg-red-50 text-red-700',
     ];
 @endphp
 

@@ -6,12 +6,12 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProductController;
-use App\Http\Controllers\PublicReportController;
+// use App\Http\Controllers\PublicReportController;
 use App\Http\Controllers\StockInController;
 use App\Http\Controllers\StockOutController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', PublicReportController::class)->name('reports.public');
+Route::get('/', fn() => redirect()->route('login'));
 
 Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('login.store');

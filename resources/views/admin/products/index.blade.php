@@ -37,16 +37,17 @@
                             <td class="px-4 py-3 font-mono text-xs text-slate-500">{{ $product->kode_produk }}</td>
                             <td class="px-4 py-3">
                                 <div class="font-semibold">{{ $product->nama_produk }}</div>
-                                <a href="{{ route('admin.products.show', $product) }}" class="text-xs font-semibold text-emerald-700 hover:underline">Detail</a>
+                                <!-- <a href="{{ route('admin.products.show', $product) }}" class="text-xs font-semibold text-emerald-700 hover:underline">Detail</a> -->
                             </td>
                             <td class="px-4 py-3 text-slate-600">{{ $product->category?->nama_kategori }}</td>
                             <td class="px-4 py-3 text-right font-semibold">{{ number_format($product->stok, 0, ',', '.') }} {{ $product->satuan }}</td>
                             <td class="px-4 py-3 text-right">Rp {{ number_format((float) $product->harga, 0, ',', '.') }}</td>
                             <td class="px-4 py-3">
-                                <span class="rounded-full border px-2.5 py-1 text-xs font-semibold {{ $product->status === 'In Stock' ? 'border-emerald-200 bg-emerald-50 text-emerald-700' : ($product->status === 'Low Stock' ? 'border-amber-200 bg-amber-50 text-amber-700' : 'border-red-200 bg-red-50 text-red-700') }}">{{ $product->status }}</span>
+                                <span class="rounded-full border px-2.5 py-1 text-xs font-semibold {{ $product->status === 'Tersedia' ? 'border-emerald-200 bg-emerald-50 text-emerald-700' : ($product->status === 'Stok Rendah' ? 'border-amber-200 bg-amber-50 text-amber-700' : 'border-red-200 bg-red-50 text-red-700') }}">{{ $product->status }}</span>
                             </td>
                             <td class="px-4 py-3">
                                 <div class="flex justify-end gap-2">
+                                    <a href="{{ route('admin.products.show', $product) }}" class="rounded-lg border border-slate-200 px-3 py-1.5 text-xs font-semibold text-slate-600 hover:bg-slate-100">Detail</a>
                                     <a href="{{ route('admin.products.edit', $product) }}" class="rounded-lg border border-slate-200 px-3 py-1.5 text-xs font-semibold text-slate-600 hover:bg-slate-100">Edit</a>
                                     <form method="POST" action="{{ route('admin.products.destroy', $product) }}" onsubmit="return confirm('Hapus produk ini?')">
                                         @csrf

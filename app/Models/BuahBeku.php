@@ -42,14 +42,14 @@ class BuahBeku extends Model
     public function getStatusAttribute(): string
     {
         if ($this->stok <= 0) {
-            return 'Out of Stock';
+            return 'Habis';
         }
 
-        if ($this->stok <= 10) {
-            return 'Low Stock';
+        if ($this->stok < 10) {
+            return 'Stok Rendah';
         }
 
-        return 'In Stock';
+        return 'Tersedia';
     }
 
 }
